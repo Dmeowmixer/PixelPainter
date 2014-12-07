@@ -5,24 +5,22 @@ div#artboard{
   height:545px;
   width:500px;
 }
-div.test{
-  border:1px solid black;
-  height:25px;
-  width:25px;
-  display:inline-block;;
-}
-div.set{
-  border:1px solid black;
-  height:5px;
-  width:5px;
+div.row{
+  height:10px;
+  width:10px;
+  border:1px solid blue;
   display:inline-block;
 }
-
-
+div.cell{
+  height:10px;
+  width:10px;
+  border:1px solid red;
+  display:inline-block;
+}
 div#controls{
   display:inline-block;
   border: 1px solid black;
-  height:222;
+  height:150;
   width:250;
   margin-bottom:20%;
 }
