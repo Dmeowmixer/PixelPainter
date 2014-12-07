@@ -2,8 +2,8 @@
 div#artboard{
   display:inline-block;
   border:1px solid black;
-  height:545px;
-  width:500px;
+  /*height:545px;*/
+  /*width:500px;*/
 }
 div.row{
   height:10px;
@@ -33,6 +33,6 @@ div#controls{
   display:inline-block;
   border: 1px solid black;
   height:150;
-  width:250;
+  /*width:250;*/
   margin-bottom:20%;
 }

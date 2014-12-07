@@ -1,7 +1,11 @@
 $(function(){
   function PixelPainter(width, height){
-      this.artboard = $("<div class = 'grid'>");
-      this.controls = $("<div class = 'colorgrid'>");
+    this.artboard = $("<div class = 'grid'>");
+    this.controls = $("<div class = 'colorgrid'>");
+    this.colorhold = null;
+    this.cell = null;
+    var self = this;
+
 
     for (var i = 0; i < height; i ++){
 
@@ -9,7 +13,12 @@ $(function(){
 
       for (var j = 0; j < width; j++){
 
-        var cell = $("<div class='cell'>");
+        cell = $("<div class='cell'>");
+
+        cell.click(function(){
+          console.log(self.colorhold);
+          $(this).css("background-color", self.colorhold);
+        });
 
         row.append(cell);
       }
@@ -29,16 +38,19 @@ $(function(){
         for(var l = 0 ; l < 3; l++){
           rgb.push(Math.floor(Math.random()*255));
         }
-        console.log("rgb(" + rgb.join(',')+ ")" )
+        // console.log("rgb(" + rgb.join(',')+ ")" )
         cee.css( 'background-color', "rgb(" + rgb.join(',')+ ")" );
+        cee.click(function(){
+          self.colorhold = $(this).css('background-color');
+          console.log(self.colorhold);
+        });
 
         roo.append(cee);
       }
       this.controls.append(roo);
     };
-    cee.click(function(){
-      var colorhold = $( input ).val();
-    }); 
+
+
   }
 
 
