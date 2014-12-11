@@ -16,7 +16,6 @@ $(function(){
         cell = $("<div class='cell'>");
 
         cell.click(function(){
-          console.log(self.colorhold);
           $(this).css("background-color", self.colorhold);
         });
 
@@ -49,13 +48,37 @@ $(function(){
       }
       this.controls.append(roo);
     };
+  $('body').append('<button class="clear">Clear</button>');
+  $('button.clear').on('click',function(){
+    $('div.row').css('background-color', 'white');
+    $('div.cell').css('background-color', 'white');
+    });
+  $('body').append('<button class="eraser">Eraser</button>');
+    $('button.eraser').on('click', function(){
+      $('div.row').on('click', function(){
+        self.colorhold = $(this).css('background-color', 'white');
+      })
+    })
+    $('button.eraser').on('click', function(){
+      $('div.cell').on('click', function(){
+        self.colorhold = $(this).css('background-color', 'white');
+      });
+
+    })
+
 
 
   }
-
 
 
   var pixelPainter = new PixelPainter(20,20);
   $("#controls").append(pixelPainter.controls);
   $("#artboard").append(pixelPainter.artboard);
 });
+
+
+
+  // $('body').append('<button class="eraser">Eraser</button>');
+  // $('button.eraser').on('click' function(){
+    // $('cell').on('click' function() {
+    //   $(this).css('background-color', 'white');
